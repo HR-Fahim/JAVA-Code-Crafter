@@ -22,4 +22,4 @@ The code in this repository is provided under the [GNU License](LICENSE). Please
 
 ## Caution
 
-This repository only provide code solutions of self practice problems. Thank you!
+This repository provide solutions of self practice problems only. Thank you!
