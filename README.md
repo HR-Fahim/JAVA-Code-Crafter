@@ -10,7 +10,7 @@ To access the solutions in this repository, you can follow these steps:
    ```
    git clone https://github.com/HR-Fahim/JAVA-Code-Crafter.git
    ```
-2. Once the repository is cloned, navigate to the root directory of the repository using the command line.
+2. Once the repository is cloned, navigate to the root directory of the repository.
 
 3. Explore the folders and files to find the specific coding problem you are interested in.
 
