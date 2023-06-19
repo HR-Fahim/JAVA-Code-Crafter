@@ -14,7 +14,7 @@ To access the solutions in this repository, you can follow these steps:
 
 3. Explore the folders and files to find the specific coding problem you are interested in.
 
-4. Open the corresponding Java file(s) in your preferred Java development environment or text editor.
+4. Open the corresponding Java file(s) in your preferred Java development environment to run the code.
 
 ## License
 
