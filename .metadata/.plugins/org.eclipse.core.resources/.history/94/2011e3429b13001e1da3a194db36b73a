@@ -1,0 +1,27 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SplitByLine {
+	public static void main(String[] args) {
+        ArrayList<String> inputList = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter multiple lines of text (press Enter after each line, and type 'done' to finish):");
+
+        String line;
+        while (true) {
+            line = scanner.nextLine();
+            if (line.equals("done")) {
+                break;
+            }
+            inputList.add(line);
+        }
+
+        // Join the strings with newline separator
+        String joinedInput = String.join("\n", inputList);
+
+        System.out.println("Joined input:");
+        System.out.println(joinedInput);
+    }
+}

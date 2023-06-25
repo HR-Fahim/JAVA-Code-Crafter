@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CamelCae&apos; to &apos;CamelCase&apos;&#x0D;&#x0A;- Original project: &apos;CamelCase&apos;&#x0D;&#x0A;- Original element: &apos;CamelCae&apos;&#x0D;&#x0A;- Renamed element: &apos;CamelCase&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CamelCae&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{CamelCae.java[CamelCae" matchStrategy="1" name="CamelCase" qualified="false" references="true" similarDeclarations="false" stamp="1687273712012" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,50 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+
+    /*
+     * Complete the 'timeConversion' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+	
+	public static String time;
+	public static char arr[];
+	static String converted;
+
+    public static String timeConversion(String s) {
+    // Write your code here
+    	
+    	time = s;
+    	
+    	
+    	return time;
+    }
+
+}
+
+public class TimeConversion {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        // Remove the BufferedWriter initialization
+        // BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        // Instead, use System.out.println to print the result
+        String s = bufferedReader.readLine();
+        String result = Result.timeConversion(s);
+        System.out.println(result);
+
+        bufferedReader.close();
+
+        // Close the BufferedWriter
+        // bufferedWriter.close();
+    }
+}

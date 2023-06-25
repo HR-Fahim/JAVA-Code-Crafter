@@ -1,0 +1,8 @@
+
+public class SVClass {
+
+	public SVClass(String str) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

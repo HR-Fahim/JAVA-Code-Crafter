@@ -1,0 +1,32 @@
+
+public class SMClass {
+
+	public SMClass(String str) {
+		// TODO Auto-generated constructor stub
+		StringBuilder spacedWord = new StringBuilder();
+
+		for (int i = 0; i < str.length(); i++) {			
+
+			if (str.charAt(0) == 'S' && str.charAt(2) == 'M' && i > 1) {
+
+				// str.replace(Character.toString(str.charAt(0)), ""); To remove char from a
+				// word
+
+				// spacedWord.deleteCharAt(x); To remove char from a word
+
+				if (Character.isUpperCase(str.charAt(i))) {
+
+					// To insert " " & remove all small latter
+					// spacedWord.append(str.charAt(j)).append(" ");
+
+					spacedWord.append(" "); // Append a space before uppercase letters (except the first character)
+
+				}
+				spacedWord.append(str.charAt(i)); // Append the current character
+			}
+		}
+		String result = spacedWord.toString(); // Append convert & print
+        System.out.println(result);
+	}
+
+}

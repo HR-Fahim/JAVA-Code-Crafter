@@ -1,0 +1,21 @@
+
+public class SCClass {
+
+	public SCClass(String str) {
+		// TODO Auto-generated constructor stub
+		StringBuilder spacedWord = new StringBuilder();
+		
+		for (int i = 0; i < str.length(); i++) {
+			while(Character.isUpperCase(str.charAt(i))){
+				str.toUpperCase().charAt(i);
+				for (int j = i + 1; j < str.length(); j++) {
+					spacedWord.append(str.charAt(j));
+				}
+				break;
+			}
+		}
+		String result = spacedWord.toString();
+		System.out.println(result);
+	}
+
+}

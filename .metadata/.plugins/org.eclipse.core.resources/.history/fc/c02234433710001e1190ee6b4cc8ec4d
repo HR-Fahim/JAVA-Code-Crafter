@@ -1,0 +1,76 @@
+
+
+    	 /* Here's a breakdown of the regular expression:
+
+		   [ ]: Defines a character class.
+		   \\(: Matches the open parenthesis character.
+		   \\): Matches the close parenthesis character.
+		   \\s: Matches any whitespace character (space, tab, newline).
+		   +: Matches one or more occurrences of the characters in the character class.
+		   The replaceAll() method replaces all occurrences of brackets and white spaces with an 
+
+    	 */
+    	
+    	// .replaceAll("\\s+", "") removes all " "
+    	// .replaceAll("[()]", "") remove all brackets using regular expression
+    	// .replaceAll("\\s+|!", "") remove spaces and skip '!' symbol using regular expression
+    	// .replaceAll("[^a-zA-Z0-9_]+", "") remove spaces and symbols using regular expression
+    	// .replaceAll("[\\s,\\.]+", "") remove spaces, commas, and periods using regular expression
+		// .replaceAll("[\\(\\)\\[\\]\\{\\}\\s]+", "") remove brackets and white spaces using regular expression
+
+
+import java.util.*;
+
+public class CamelCase {
+
+    public static void main(String[] args) {
+       
+    	Scanner input = new Scanner(System.in);
+    	
+    	// To insert " "
+    	
+    	StringBuilder spacedWord = new StringBuilder();
+    	
+    	String str = input.nextLine();
+    			//.replaceAll("[()]", "")
+    			//.replaceAll("\\s+", "")
+    			//.replaceAll("[^a-zA-Z0-9_]+", "");
+    	
+    	str.toUpperCase().charAt(0);
+    	str.toUpperCase().charAt(2);
+    	
+    	for(int i = 0 ; i < str.length() ; i++) {
+    		
+    		/*if(str.charAt(0) == 'S' && str.charAt(1) == 'M' && i > 1) {
+    			
+    			// str.replace(Character.toString(str.charAt(0)), ""); To remove char from a word
+    			
+    			// spacedWord.deleteCharAt(x); To remove char from a word
+    			
+    			if(Character.isUpperCase(str.charAt(i))) {
+    				
+    					// To insert " " & remove all small latter
+    					// spacedWord.append(str.charAt(j)).append(" ");
+    					
+    					spacedWord.append(" "); // Append a space before uppercase letters (except the first character)
+    					
+    			}
+    				spacedWord.append(str.charAt(i)); // Append the current character
+    		}	*/	
+
+    		if(str.charAt(0) == 'C' && str.charAt(2) == 'V' && i > 3) {
+    			
+    			if(Character.isSpaceChar(str.charAt(i))) {    				
+    					
+    				spacedWord.append(str.toUpperCase().charAt(i+1)); 
+    					for(int j = i+2 ; j < str.length() ; j++) {
+    						spacedWord.append(str.charAt(j));
+    					}
+    					break;
+    			}
+    		}
+    	}
+		String result = spacedWord.toString();
+        System.out.println(result);
+    }
+}
