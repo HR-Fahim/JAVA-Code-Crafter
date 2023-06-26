@@ -49,6 +49,7 @@ class CMClass {
 			System.out.print(result.charAt(i));
 		}
 		System.out.print("()");
+		System.out.println();
 	}
 
 }
@@ -58,23 +59,18 @@ class CVClass {
 		// TODO Auto-generated constructor stub
 		StringBuilder spacedWord = new StringBuilder();
 		
-		for (int i = 0; i < str.length(); i++) {
+		String[] chars = StringUtils.split(str);
 
-			if (str.charAt(0) == 'C' && str.charAt(2) == 'V' && i > 3) {
-
-				if (Character.isSpaceChar(str.charAt(i))) {
-
-					spacedWord.append(str.toUpperCase().charAt(i + 1));
-					for (int j = i + 2; j < str.length(); j++) {
-						spacedWord.append(str.charAt(j));
-					}
-					break;
-				}
-				spacedWord.append(str.charAt(i));
-			}
+		for (String c : chars) {
+			spacedWord.append(StringUtils.capitalize(c.toLowerCase()));
 		}
+
 		String result = spacedWord.toString();
-		System.out.println(result);
+		for(int i = 4 ; i < result.length() ; i++) {
+			System.out.print(result.charAt(i));
+		}
+		//System.out.print("()");
+		System.out.println();
 	}
 
 }
@@ -150,40 +146,41 @@ class SVClass {
 
 }
 
-public class Test {
+public class Solution {
 
     public static void main(String[] args) {
-       
-    	Scanner input = new Scanner(System.in);
-    	
-    	String str = input.nextLine();
-    	
-    	str.toUpperCase().charAt(0);
-    	str.toUpperCase().charAt(2);
-    	
-    	//SMClass SM = new SMClass(str);
-    	//CVClass CV = new CVClass(str);
-    	//CCClass CC = new CCClass(str);
-    	//SCClass SC = new SCClass(str);
-    	//CMClass CM = new CMClass(str);
-    	SVClass SV = new SVClass(str);
-    	
-    		if (str.charAt(0) == 'S' && str.charAt(2) == 'M') {
-    			SMClass SM = new SMClass(str);
-    		}
-    		else if (str.charAt(0) == 'C' && str.charAt(2) == 'V') {
-    			CVClass CV = new CVClass(str);
-    		}
-    		else if (str.charAt(0) == 'C' && str.charAt(2) == 'C') {
-    			CCClass CC = new CCClass(str);
-    		}
-    		else if (str.charAt(0) == 'S' && str.charAt(2) == 'C') {
-    			SCClass SC = new SCClass(str);
-    		}
-    		else if (str.charAt(0) == 'C' && str.charAt(2) == 'M') {
-    			CMClass CM = new CMClass(str);
-    		}
-    	
 
+        Scanner scanner = new Scanner(System.in);
+        String str;
+
+        while (true) {
+
+            if (scanner.hasNextLine()) {
+                str = scanner.nextLine();
+
+                if (str.isEmpty()) {
+                    break; // Exit the loop if no input is available
+                }
+
+                str = str.trim(); // Trim leading/trailing whitespace
+
+                if (str.charAt(0) == 'S' && str.charAt(2) == 'M') {
+                    SMClass SM = new SMClass(str);
+                } else if (str.charAt(0) == 'C' && str.charAt(2) == 'V') {
+                    CVClass CV = new CVClass(str);
+                } else if (str.charAt(0) == 'C' && str.charAt(2) == 'C') {
+                    CCClass CC = new CCClass(str);
+                } else if (str.charAt(0) == 'S' && str.charAt(2) == 'C') {
+                    SCClass SC = new SCClass(str);
+                } else if (str.charAt(0) == 'C' && str.charAt(2) == 'M') {
+                    CMClass CM = new CMClass(str);
+                } else if (str.charAt(0) == 'S' && str.charAt(2) == 'V') {
+                    SVClass SV = new SVClass(str);
+                }
+            } else {
+                break; // Exit the loop if no input is available
+            }
+        }
+        scanner.close(); // Close the scanner when done
     }
 }
