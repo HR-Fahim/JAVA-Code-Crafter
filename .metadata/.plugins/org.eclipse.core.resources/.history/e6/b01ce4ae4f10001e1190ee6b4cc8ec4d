@@ -1,8 +1,0 @@
-
-public class SCClass {
-
-	public SCClass(String str) {
-		// TODO Auto-generated constructor stub
-	}
-
-}
