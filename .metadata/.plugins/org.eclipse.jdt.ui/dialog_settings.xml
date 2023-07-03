@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
-	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-11"/>
+	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="0"/>
+	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-17"/>
 	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Program Files\Java\jdk-11.0.16\lib\commons-lang3-3.12.0"/>
 	<item key="UserLibraryLoadSaveDialog.size" value="878,680"/>
 	<item key="TypeHierarchyViewPart.hierarchyview" value="2"/>
