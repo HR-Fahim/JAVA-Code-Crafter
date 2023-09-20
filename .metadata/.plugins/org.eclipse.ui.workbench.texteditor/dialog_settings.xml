@@ -6,7 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="for(int i=0;i&lt;n;i++) {"/>
 		<list key="findhistory">
+			<item value="for(int i=0;i&lt;n;i++) {"/>
 			<item value="import java.io.BufferedReader;"/>
 		</list>
 		<list key="replacehistory">

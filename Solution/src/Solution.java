@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -10,46 +11,48 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
 
-    /*
-     * Complete the 'divisibleSumPairs' function below.
-     *
-     * The function is expected to return an INTEGER.
-     * The function accepts following parameters:
-     *  1. INTEGER n
-     *  2. INTEGER k
-     *  3. INTEGER_ARRAY ar
-     */
-
-    public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
-    // Write your code here
-    	return k*n;
-    }
-
-}
 
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        List<List<Integer>> arr = new ArrayList<>();
 
-        int n = Integer.parseInt(firstMultipleInput[0]);
+        IntStream.range(0, 6).forEach(i -> {
+            try {
+                arr.add(
+                    Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                        .map(Integer::parseInt)
+                        .collect(toList())
+                );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        
+        int maxSum = Integer.MIN_VALUE; // Initialize with a large negative value
+        
+        int rows = arr.size();
+        int columns = arr.get(0).size();
+        
+        for(int i=0;i<rows*columns;i++) {
+        	
+        	int row = i/columns;
+        	int col = i%columns;
+        	
+        	if(row < 4 && col < 4) {
+        		
+        		int hourglassSum = arr.get(row).get(col) + arr.get(row).get(col + 1) + arr.get(row).get(col + 2)
+                        + arr.get(row + 1).get(col + 1)
+                        + arr.get(row + 2).get(col) + arr.get(row + 2).get(col + 1) + arr.get(row + 2).get(col + 2);
 
-        int k = Integer.parseInt(firstMultipleInput[1]);
-
-        List<Integer> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
-
-        int result = Result.divisibleSumPairs(n, k, ar);
-
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+                maxSum = Math.max(maxSum, hourglassSum);
+        	}
+        }       
+        
+        System.out.println(maxSum);
 
         bufferedReader.close();
-        bufferedWriter.close();
     }
 }
