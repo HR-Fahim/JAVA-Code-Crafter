@@ -20,5 +20,18 @@ public class Important {
         
         // Printing the average of the elements in the ArrayList
         System.out.println(sum / count);
+        
+//        for (int num : list) {
+//            System.out.println(num);
+//        }
+        
+    	/* Original matrix position: (i, j)
+ 	 	   Horizontal flip: (i, 2 * n - 1 - j)
+ 	       Vertical flip: (2 * n - 1 - i, j)
+ 	       Both flips: (2 * n - 1 - i, 2 * n - 1 - j)
+ 	    */
+        
+//        matrix.get(1).set(2, 42); // Set value 42 at row 1, column 2
+
     }
 }

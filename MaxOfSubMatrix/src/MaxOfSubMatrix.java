@@ -1,16 +1,6 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-
-
 
 class Result {
 
@@ -20,27 +10,33 @@ class Result {
      * The function is expected to return an INTEGER.
      * The function accepts 2D_INTEGER_ARRAY matrix as parameter.
      */
-
+	
+	/* Original matrix position: (i, j)
+	   Horizontal flip: (i, 2 * n - 1 - j)
+	   Vertical flip: (2 * n - 1 - i, j)
+	   Both flips: (2 * n - 1 - i, 2 * n - 1 - j)
+	 */
+	
     public static int flippingMatrix(List<List<Integer>> matrix) {
-    // Write your code here
-    	int size = matrix.size();
-//    	int x=3;
-    	for(int i=0;i<size;i++) {
-    		matrix.get(i).set(size/2, matrix.get(--size).get((size/2)-1));
-    	}
-//    	for(int i=0;i<size;i++) {
-//    		matrix.get(0).set(i, matrix.get(size/2).get(--size));
-//    	}
-    	int sum=0;
-    	for(int i=0;i<size;i++) {
-    		sum=sum+matrix.get(0).get(i);
-    	}
-    	return sum;
+        int n = matrix.size() / 2;
+        int maxSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int maxValue = Math.max(
+                    Math.max(matrix.get(i).get(j), matrix.get(i).get(2 * n - 1 - j)),
+                    Math.max(matrix.get(2 * n - 1 - i).get(j), matrix.get(2 * n - 1 - i).get(2 * n - 1 - j))
+                );
+                maxSum += maxValue;
+            }
+        }
+
+        return maxSum;
     }
 
 }
 
-public class Solution {
+public class MaxOfSubMatrix {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -53,17 +49,13 @@ public class Solution {
 
                 List<List<Integer>> matrix = new ArrayList<>();
 
-                IntStream.range(0, 2 * n).forEach(i -> {
-                    try {
-                        matrix.add(
-                            Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-                                .map(Integer::parseInt)
-                                .collect(toList())
-                        );
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                });
+                for (int i = 0; i < 2 * n; i++) {
+                    matrix.add(
+                        Arrays.stream(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                            .map(Integer::parseInt)
+                            .collect(Collectors.toList())
+                    );
+                }
 
                 int result = Result.flippingMatrix(matrix);
 
