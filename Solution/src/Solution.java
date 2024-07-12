@@ -15,28 +15,43 @@ import static java.util.stream.Collectors.toList;
 class Result {
 
     /*
-     * Complete the 'flippingMatrix' function below.
+     * Complete the 'palindromeIndex' function below.
      *
      * The function is expected to return an INTEGER.
-     * The function accepts 2D_INTEGER_ARRAY matrix as parameter.
+     * The function accepts STRING s as parameter.
      */
 
-    public static int flippingMatrix(List<List<Integer>> matrix) {
+    public static int palindromeIndex(String s) {
     // Write your code here
-    	int size = matrix.size();
-//    	int x=3;
-    	for(int i=0;i<size;i++) {
-    		matrix.get(i).set(size/2, matrix.get(--size).get((size/2)-1));
-    	}
-//    	for(int i=0;i<size;i++) {
-//    		matrix.get(0).set(i, matrix.get(size/2).get(--size));
-//    	}
-    	int sum=0;
-    	for(int i=0;i<size;i++) {
-    		sum=sum+matrix.get(0).get(i);
-    	}
-    	return sum;
+    	// Check if a given string is a palindrome
+        
+        int len = s.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (s.charAt(i) != s.charAt(len - 1 - i)) {
+                // Check if removing the left character makes the string a palindrome
+                if (isPalindrome(s.substring(0, i) + s.substring(i + 1))) {
+                    return i;
+                }
+                // Check if removing the right character makes the string a palindrome
+                if (isPalindrome(s.substring(0, len - 1 - i) + s.substring(len - i))) {
+                    return len - 1 - i;
+                }
+                return -1; // No single character removal can make the string a palindrome
+            }
+        }
+        return -1; // The string is already a palindrome
     }
+
+	private static boolean isPalindrome(String str) {
+		// TODO Auto-generated method stub
+		int len = str.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+	}
 
 }
 
@@ -49,23 +64,9 @@ public class Solution {
 
         IntStream.range(0, q).forEach(qItr -> {
             try {
-                int n = Integer.parseInt(bufferedReader.readLine().trim());
+                String s = bufferedReader.readLine();
 
-                List<List<Integer>> matrix = new ArrayList<>();
-
-                IntStream.range(0, 2 * n).forEach(i -> {
-                    try {
-                        matrix.add(
-                            Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-                                .map(Integer::parseInt)
-                                .collect(toList())
-                        );
-                    } catch (IOException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                });
-
-                int result = Result.flippingMatrix(matrix);
+                int result = Result.palindromeIndex(s);
 
 //                bufferedWriter.write(String.valueOf(result));
 //                bufferedWriter.newLine();
