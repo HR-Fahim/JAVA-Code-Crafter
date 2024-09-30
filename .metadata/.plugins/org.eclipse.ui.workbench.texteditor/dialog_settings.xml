@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="/* int ID = input.nextInt(); */"/>
+		<item key="selection" value="import java.util.regex.Matcher;"/>
 		<list key="findhistory">
+			<item value="import java.util.regex.Matcher;"/>
+			<item value="import java.util.*;"/>
+			<item value="import java.util.HashMap;"/>
 			<item value="/* int ID = input.nextInt(); */"/>
 			<item value="for(int i=0;i&lt;n;i++) {"/>
 			<item value="import java.io.BufferedReader;"/>

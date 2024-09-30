@@ -16,7 +16,7 @@ public class Important {
         int count = (int) array.stream().mapToInt(Integer::intValue).count();
         
         // Calculating the sum of all elements in the ArrayList
-        int sum = array.stream().mapToInt(Integer::intValue).sum();
+        int sum = array.stream().mapToInt(Integer::intValue).sum(); 
         
         // Printing the average of the elements in the ArrayList
         System.out.println(sum / count);

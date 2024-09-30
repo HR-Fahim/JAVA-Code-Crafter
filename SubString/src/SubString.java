@@ -14,5 +14,11 @@ public class SubString {
         int end = in.nextInt();
         
         System.out.println(S.subSequence(start, end));
+        
+        String h = "Hello";
+        
+        // Print prefix (Important) 
+        
+        System.out.println(h.substring(4-1));  // Output: lo
     }
 }
