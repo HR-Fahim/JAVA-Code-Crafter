@@ -6,13 +6,17 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
-			<item value="org.eclipse.jdt.ui.edit.text.java.format"/>
+			<item value="org.eclipse.ui.window.preferences(preferencePageId=org.eclipse.ant.ui.AntRuntimePreferencePage)"/>
+			<item value="org.eclipse.debug.ui.actions.OpenRunConfigurations"/>
 			<item value="org.eclipse.jdt.ui.preferences.UserLibraryPreferencePage"/>
+			<item value="org.eclipse.ant.ui.AntRuntimePreferencePage"/>
 			<item value="org.eclipse.egit.ui.RepositoriesView"/>
 			<item value="org.eclipse.ui.preferencePages.Views"/>
 		</list>
 		<list key="orderedProviders">
 			<item value="org.eclipse.ui.commands"/>
+			<item value="org.eclipse.ui.actions"/>
+			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.ui.preferences"/>
@@ -22,10 +26,14 @@
 			<item value="1"/>
 			<item value="1"/>
 			<item value="1"/>
+			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="textArray">
-			<item value="format"/>
+			<item value="runti"/>
+			<item value="run"/>
 			<item value="lib"/>
+			<item value="runt"/>
 			<item value="git"/>
 			<item value="theme"/>
 		</list>
